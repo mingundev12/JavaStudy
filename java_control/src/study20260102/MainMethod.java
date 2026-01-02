@@ -66,9 +66,9 @@ public class MainMethod {
 		// 0분 초과일 경우 요금 계산 : 기본요금
 		// 0분 일 경우(주차하지 않음)는 요금을 계산하지 않음(초기화된 0원 그대로)
 		if (parkingTime >= 240)
-			parkingRate = BASE_RATE_OVERTIME + (((parkingTime - 240) / 10) * ADDITIONAL_RATE_PER_TENMIN;
+			parkingRate = BASE_RATE_OVERTIME + (((parkingTime - 240) / 10) * ADDITIONAL_RATE_PER_TENMIN);
 		else if (parkingTime >= 40)
-			parkingRate = BASE_RATE + (((parkingTime - 40) / 10) * ADDITIONAL_RATE_PER_TENMIN;
+			parkingRate = BASE_RATE + (((parkingTime - 40) / 10) * ADDITIONAL_RATE_PER_TENMIN);
 		else if (parkingTime > 0)
 			parkingRate = BASE_RATE;
 
