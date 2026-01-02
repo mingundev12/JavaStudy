@@ -1,5 +1,7 @@
 package study20260102;
 
+import java.util.Scanner;
+
 public class MainMethod {
 
 	public static void main(String[] args) {
@@ -40,7 +42,44 @@ public class MainMethod {
 //		예) 3시간 50분 (230분) -> 3000원
 //			4시간 12분 (252분) -> 2600원
 //		주차한 기간(분)을 입력하면 요금이 계산하여 출력되는 코드를 작성
+
+
+		// 과제 풀이
 		
+		// 기본요금(1000원), 4시간 이상 기본요금(2500원), 10분당 추가요금(100원)을 상수로 선언
+		// 상수로 선언한 이유 : 주차장 사정에 따라 요금이 인상되거나 인하될 경우 계산식에서의 반영이 용이함
+		final int BASE_FEE = 1000;
+		final int BASE_FEE_OVERTIME = 2500;
+		final int ADDITIONAL_FEE_PER_TENMIN = 100;
+		
+		// 주차한 시간(분)과 주차요금(원)을 변수로 선언하고 키보드 입력 받을 Scanner 객체 선언
+		int parkingTime = 0;
+		int parkingFee = 0;
+		Scanner sc = new Scanner(System.in);
+
+		// 시스템 메세지로 질문을 출력하여 주차한 시간을 입력받음
+		System.out.print("주차한 기간(분) 입력 : ");
+		parkingTime = Integer.parseInt(sc.nextLine());
+
+		// 조건문 - 240분 이상일 경우의 요금 계산 : 240분 이후의 기본요금 + 240분에서 초과한 시간(분)을 10으로 나눈뒤 추가요금(10분당 100원)을 곱하여 계산
+		// 40분 이상일 경우의 요금 계산 : 기본요금 + 40분에서 초과한 시간(분)을 10으로 나눈 뒤 추가요금(10분당 100원)을 곱하여 계산  
+		// 0분 이상일 경우 요금 계산 : 기본요금
+		// 0분 일 경우(주차하지 않음)는 요금을 계산하지 않음(초기화된 0원 그대로)
+		if (parkingTime >= 240)
+			parkingFee = BASE_FEE_OVERTIME + (((parkingTime - 240) / 10) * ADDITIONAL_FEE_PER_TENMIN;
+		else if (parkingTime >= 40)
+			parkingFee = BASE_FEE + (((parkingTime - 40) / 10) * ADDITIONAL_FEE_PER_TENMIN;
+		else if (parkingTime > 0)
+			parkingFee = BASE_FEE;
+
+		// 주차요금 출력, 주차시간이 음수로 입력된 경우는 잘못입력하였다는 메세지를 출력.
+		if (parkingTime >= 0)
+			System.out.println("주차요금 : " + parkingFee + " 원");
+		else
+			System.out.println("주차시간 입력이 잘못되었습니다.");
+
+		// 선언했던 Scanner 객체를 닫음
+		sc.close();
 	}
 
 }
@@ -72,4 +111,5 @@ public class MainMethod {
  *
  * 반복문 - for, while, do while
  *
+
  */
