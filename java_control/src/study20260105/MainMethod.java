@@ -7,6 +7,9 @@ public class MainMethod {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
+
+		
+//		Math.random() 개요
 		
 //		Integer.parseInt(String) 정수값으로 변경할 수 있다.
 //		Math.floor() 소수점 자르기
@@ -22,6 +25,7 @@ public class MainMethod {
 //		
 //		System.out.println("23~119" + num);
 
+		
 //		동전의 앞면 뒷면 맞추기
 
 //		int coin = (int) Math.floor(Math.random() * 2) + 1;
@@ -46,6 +50,9 @@ public class MainMethod {
 //		else
 //			System.out.println("맞추기 실패..");
 
+		
+//		주사위
+		
 ////		컴퓨터 주사위
 //		int com = (int) Math.floor(Math.random() * 6) + 1;
 //		
@@ -59,31 +66,42 @@ public class MainMethod {
 //			System.out.println(" 비김....");
 //		else
 //			System.out.println(" 나의 패배....");
+
 		
 //		컴퓨터 와 함께 하는 가위바위보 게임!!
 //		1-가위, 2-바위, 3-보
-		
+
 //		컴퓨터의 가위바위보는 랜덤으로
 //		나의 가위바위보 값은 키보드 입력으로
 //		내가 이겼는지, 졌는지, 비겼는지 출력하세요!!~
-		
+
 		int com = (int) Math.floor(Math.random() * 3) + 1;
-		
+
 		System.out.println("가위바위보 게임!");
 		System.out.println("가위:1, 바위:2, 보:3");
 		System.out.print("가위바위보 입력 : ");
 		int user = sc.nextInt();
-		
+
 		System.out.println(" 컴퓨터 : " + com + " vs 나 : " + user);
 		
+//		두 숫자를 단순 비교하는 알고리즘
+//		if (user == com)
+//			System.out.println(" 비김..");
+//		else if ((user == 1 && com == 3) || (user == 2 && com == 1) || (user == 3 && com == 2))
+//			System.out.println(" 나의 승리!");
+//		else
+//			System.out.println(" 나의 패배");
+			
 		
-		if (user == com )
+//		두 수의 차를 구하여 확인하는 알고리즘
+		int res = (user - com) % 3;
+
+		if (res == 0)
 			System.out.println(" 비김..");
-		else if ((user > com || (user == 1 && com == 3)) && !(user == 3 && com == 1))
+		else if (res == 1)
 			System.out.println(" 나의 승리!");
 		else
 			System.out.println(" 나의 패배");
 	}
 
 }
-
