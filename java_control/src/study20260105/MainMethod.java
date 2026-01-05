@@ -80,6 +80,7 @@ public class MainMethod {
 			System.out.println("비겼다. (" + user + " vs " + com + ")");
 		else
 			System.out.println("나의 패배 (" + user + " vs " + com + ")");
+		
 	}
 
 }
