@@ -74,12 +74,15 @@ public class MainMethod {
 		System.out.print("가위바위보 입력 : ");
 		int user = sc.nextInt();
 		
-		if ((user > com || (user == 1 && com == 3)) && !(user == 3 && com == 1))
-			System.out.println("나의 승리! (" + user + " vs " + com + ")");
-		else if (user == com)
-			System.out.println("비겼다. (" + user + " vs " + com + ")");
+		System.out.println(" 컴퓨터 : " + com + " vs 나 : " + user);
+		
+		
+		if (user == com )
+			System.out.println(" 비김..");
+		else if ((user > com || (user == 1 && com == 3)) && !(user == 3 && com == 1))
+			System.out.println(" 나의 승리!");
 		else
-			System.out.println("나의 패배 (" + user + " vs " + com + ")");
+			System.out.println(" 나의 패배");
 	}
 
 }
