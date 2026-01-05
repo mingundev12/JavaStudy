@@ -61,20 +61,21 @@ public class MainMethod {
 		System.out.print("주차한 기간(분) 입력 : ");
 		parkingTime = Integer.parseInt(sc.nextLine());
 
+		// 주차시간이 양수(0이상)일때만 주차요금 계산
+		if (parkingTime >= 0) {
 		// 조건문 - 240분 이상일 경우의 요금 계산 : 240분 이후의 기본요금 + 240분에서 초과한 시간(분)을 10으로 나눈뒤 추가요금(10분당 100원)을 곱하여 계산
 		// 40분 이상일 경우의 요금 계산 : 기본요금 + 40분에서 초과한 시간(분)을 10으로 나눈 뒤 추가요금(10분당 100원)을 곱하여 계산  
 		// 0분 초과일 경우 요금 계산 : 기본요금
 		// 0분 일 경우(주차하지 않음)는 요금을 계산하지 않음(초기화된 0원 그대로)
-		if (parkingTime >= 240)
-			parkingRate = BASE_RATE_OVERTIME + (((parkingTime - 240) / 10) * ADDITIONAL_RATE_PER_TENMIN);
-		else if (parkingTime >= 40)
-			parkingRate = BASE_RATE + (((parkingTime - 40) / 10) * ADDITIONAL_RATE_PER_TENMIN);
-		else if (parkingTime > 0)
-			parkingRate = BASE_RATE;
-
-		// 주차요금 출력, 주차시간이 음수로 입력된 경우는 잘못입력하였다는 메세지를 출력.
-		if (parkingTime >= 0)
+			if (parkingTime >= 240)
+				parkingRate = BASE_RATE_OVERTIME + (((parkingTime - 240) / 10) * ADDITIONAL_RATE_PER_TENMIN);
+			else if (parkingTime >= 40)
+				parkingRate = BASE_RATE + (((parkingTime - 40) / 10) * ADDITIONAL_RATE_PER_TENMIN);
+			else
+				parkingRate = BASE_RATE;
 			System.out.println("주차요금 : " + parkingRate + " 원");
+		}
+		// 주차시간이 음수로 입력된 경우는 잘못 입력하였다는 메세지를 출력.
 		else
 			System.out.println("주차시간 입력이 잘못되었습니다.");
 
