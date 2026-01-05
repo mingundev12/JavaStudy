@@ -1,0 +1,42 @@
+package study20260105;
+
+import java.util.Scanner;
+
+public class HomeWork2 {
+
+	public static void main(String[] args) {
+/*
+ * 		업다운 게임
+ * 		user가 제시하는 숫자를
+ * 		컴퓨터가 맞추는 게임
+ * 		1~50 범위
+ * 
+ */
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("업다운 게임");
+		System.out.print("문제 입력(1~50) :");
+		int user = sc.nextInt();
+		int up = 50, down = 1;
+		
+		while (true) {
+			System.out.printf("%2d부터 %2d까지의 숫자를 생성, ", down, up);
+			int com = (int) Math.floor(Math.random() * (up - down + 1)) + down;
+			
+			if ( com > user ) {
+				System.out.println(com + " : DOWN");
+				up = com - 1;
+			} else if (com < user) {
+				System.out.println(com + " : UP");
+				down = com + 1;
+			} else {
+				System.out.println(com + " : 정답");
+				break;
+			}
+		}
+		
+		sc.close();
+
+	}
+
+}
