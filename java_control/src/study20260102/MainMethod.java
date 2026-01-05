@@ -48,9 +48,9 @@ public class MainMethod {
 		
 		// 기본요금(1000원), 4시간 이상 기본요금(2500원), 10분당 추가요금(100원)을 상수로 선언
 		// 상수로 선언한 이유 : 주차장 사정에 따라 요금이 인상되거나 인하될 경우 계산식에서의 반영이 용이함
-		final int BASE_RATE = 1000;
-		final int BASE_RATE_OVERTIME = 2500;
-		final int ADDITIONAL_RATE_PER_TENMIN = 100;
+		final int BASE_RATE = 1000, BASE_TIME = 30;
+		final int BASE_RATE_OVERTIME = 2500, BASE_OVERTIME = 240;
+		final int INC_RATE = 100, INC_TIME = 10;
 		
 		// 주차한 시간(분)과 주차요금(원)을 변수로 선언하고 키보드 입력 받을 Scanner 객체 선언
 		int parkingTime = 0;
@@ -67,10 +67,10 @@ public class MainMethod {
 		// 0분 초과일 경우 요금 계산 : 기본요금
 		// 0분 일 경우(주차하지 않음)는 요금을 계산하지 않음(초기화된 0원 그대로)
 		if (parkingTime >= 0) {
-			if (parkingTime >= 240)
-				parkingRate = BASE_RATE_OVERTIME + (((parkingTime - 240) / 10) * ADDITIONAL_RATE_PER_TENMIN);
-			else if (parkingTime >= 40)
-				parkingRate = BASE_RATE + (((parkingTime - 40) / 10) * ADDITIONAL_RATE_PER_TENMIN);
+			if (parkingTime >= BASE_OVERTIME)
+				parkingRate = BASE_RATE_OVERTIME + (((parkingTime - BASE_OVERTIME) / INC_TIME) * INC_RATE);
+			else if (parkingTime > BASE_TIME)
+				parkingRate = BASE_RATE + (((parkingTime - BASE_TIME) / INC_TIME) * INC_RATE);
 			else
 				parkingRate = BASE_RATE;
 			System.out.println("주차요금 : " + parkingRate + " 원");
@@ -81,6 +81,32 @@ public class MainMethod {
 
 		// 선언했던 Scanner 객체를 닫음
 		sc.close();
+		
+/*		
+ * 		int cost = 1000; // 기본요금 (30분)
+ * 		int inc = 100, incTime = 10; // 10분당 100원
+ * 		int time = 30; // 기본시간 30분
+ * 
+ *  	// 주차 시간 총 몇 분 입력
+ *  	Scanner scan = new Scanner(System.in); // 시스템(컴퓨터)으로부터 입력된 키 값 받기
+ *  	
+ *  	System.out.print(" 총 몇분 주차 : ");
+ *  	int pTime = scan.nextInt(); // 키보드 입력 값 받아서 정수로 변환하여 변수에 저장
+ *  
+ *  	//기본값이 큰 것 부터 하는 것이 좋다
+ *  	pTime /= incTime;
+ *  	if (pTime >= 24) { // 4시간 이상 주차했다면
+ *  		cost = 2500;
+ *  		pTime -= 24;
+ *  	} else if(pTime > 3) { // 4시간 이상이 아니라면, 기본시간 30분으로 계산해야 된다.
+ *  		pTime -= 3; // 기본시간이 30분이니까 3빼기
+ *  	} else {
+ *  		pTime = 0;
+ *  	}
+ *  
+ *  	int price = cost + pTime * inc;
+ *		System.out.println("주차요금 : " + price + " 원");
+ */
 	}
 
 }
