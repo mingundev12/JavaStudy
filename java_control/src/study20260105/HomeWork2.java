@@ -34,6 +34,8 @@ public class HomeWork2 {
 				break;
 			}
 		}
+		
+		sc.close();
 
 	}
 
