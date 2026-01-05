@@ -94,7 +94,7 @@ public class MainMethod {
  *  	int pTime = scan.nextInt(); // 키보드 입력 값 받아서 정수로 변환하여 변수에 저장
  *  
  *  	//기본값이 큰 것 부터 하는 것이 좋다
- *  	pTime /= incTime;
+ *  	pTime /= incTime; // pTime = (PTime / 10) - 3
  *  	if (pTime >= 24) { // 4시간 이상 주차했다면
  *  		cost = 2500;
  *  		pTime -= 24;
@@ -104,6 +104,7 @@ public class MainMethod {
  *  		pTime = 0;
  *  	}
  *  
+ *  	// 주차 요금 계산
  *  	int price = cost + pTime * inc;
  *		System.out.println("주차요금 : " + price + " 원");
  */
