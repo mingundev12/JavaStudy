@@ -20,7 +20,7 @@ public class HomeWork2 {
 		int up = 50, down = 1;
 		
 		while (true) {
-			System.out.printf("%2d부터 %2d까지의 숫자를 생성, ", down, up);
+//			System.out.printf("%2d부터 %2d까지의 숫자를 생성, ", down, up);
 			int com = (int) Math.floor(Math.random() * (up - down + 1)) + down;
 			
 			if ( com > user ) {
