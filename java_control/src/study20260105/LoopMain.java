@@ -82,28 +82,43 @@ public class LoopMain {
 //			;
 //		}
 
-		int i = 10;
-		while (true) {
-			System.out.println(i);
-			i++;
-			if (i == 40)
-				break;
-		}
+//		int i = 10;
+//		while (true) {
+//			System.out.println(i);
+//			i++;
+//			if (i == 40)
+//				break;
+//		}
 
-		while (true) {
-			int num = (int) Math.floor(Math.random() * 20) + 1;
-			System.out.println(num);
-			if (num == 11)
+//		while (true) {
+//			int num = (int) Math.floor(Math.random() * 20) + 1;
+//			System.out.println(num);
+//			if (num == 11)
+//				break;
+//		}
+		
+		int com = (int) Math.floor(Math.random() * 50) + 1;
+		
+		while(true) {
+			System.out.print("1~50중 입력 : ");
+			int user = scan.nextInt();
+			
+			if( user > com ) {
+				System.out.println("DOWN");
+			}
+			if( user < com ) {
+				System.out.println("UP");
+			}
+			if( user == com ) {
+				System.out.println("정답입니다.");
 				break;
+			}
 		}
 	}
 
 }
 
 /*
- * 1월 5일 과제 https://github.com/masterJKR/hallabong_java
- * 
- * 가위 바위 보 게임을 총 15판 진행 게임을 진행하면서 1판 끝낼때 마다 몇승 몇패 몇무 출력하기
  * 
  *
  * 반복문 - for, while, do while 반복문이란 특정 코드를 정해진 횟수/조건 만큼 동작시키는 과정 이다.
