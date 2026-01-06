@@ -3,10 +3,10 @@ package study20260105;
 import java.util.Scanner;
 
 public class MainMethod {
+	public static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
 
-		Scanner sc = new Scanner(System.in);
 
 		
 //		Math.random() 개요

@@ -3,6 +3,8 @@ package study20260105;
 import java.util.Scanner;
 
 public class LoopMain {
+	
+	public static Scanner scan = new Scanner(System.in);
 
 	public static void main(String[] args) {
 
@@ -15,7 +17,6 @@ public class LoopMain {
 //				System.out.println("i : " + i);
 //		}
 
-		Scanner scan = new Scanner(System.in);
 
 //		System.out.print("정수 입력 : ");
 //		int num = scan.nextInt();
