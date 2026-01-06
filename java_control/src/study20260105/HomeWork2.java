@@ -16,21 +16,21 @@ public class HomeWork2 {
 		
 		System.out.println("업다운 게임");
 		System.out.print("문제 입력(1~50) :");
-		int user = sc.nextInt();
+		int user = sc.nextInt(), com;
 		int up = 50, down = 1;
 		
 		while (true) {
 			System.out.printf("%2d부터 %2d까지의 숫자를 생성, ", down, up);
-			int com = (int) Math.floor(Math.random() * (up - down + 1)) + down;
+			com = (int) Math.floor(Math.random() * (up - down + 1)) + down;
 			
 			if ( com > user ) {
-				System.out.println(com + " : DOWN");
+				System.out.printf("%2d : DOWN\n", com);
 				up = com - 1;
 			} else if (com < user) {
-				System.out.println(com + " : UP");
+				System.out.printf("%2d : UP\n", com);
 				down = com + 1;
 			} else {
-				System.out.println(com + " : 정답");
+				System.out.printf("%2d : 정답\n", com);
 				break;
 			}
 		}

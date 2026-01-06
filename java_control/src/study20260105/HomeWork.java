@@ -14,16 +14,16 @@ public class HomeWork {
 		int cntWin = 0, cntLose = 0, cntDraw = 0;
 		Scanner sc = new Scanner(System.in);
 		
-		int com;
+		int com, user, res;
 
 		System.out.println("가위바위보 게임!");
 		System.out.println("가위 - 1, 바위 - 2, 보 - 3");
 		for(int i = 0; i < 15; i++) {
 			com = (int) (Math.random() * 3) + 1;
 			System.out.print("입력 : ");
-			int user = sc.nextInt();
+			user = sc.nextInt();
 			
-			int res = (user - com + 3) % 3;
+			res = (user - com + 3) % 3;
 //			System.out.print(res);
 			
 			if( res == 0 ) {
