@@ -1,0 +1,36 @@
+package study20260106;
+
+import java.util.Scanner;
+
+public class LoopMain2 {
+	
+	public static Scanner scan = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		
+		int user, com;
+		int min = 1, max = 50;
+		System.out.printf("%2d~%2d중 입력 : ", min, max);
+		user = scan.nextInt();
+		
+		while(true) {
+			System.out.printf("%2d~%2d 생성, ", min, max);
+			com = (int) Math.floor(Math.random() * (max - min + 1)) + min;
+			
+			if( com > user ) {
+				System.out.printf("%2d : DOWN\n", com);
+				max = com - 1;
+			}
+			if( com < user ) {
+				System.out.printf("%2d : UP\n", com);
+				min = com + 1;
+			}
+			if( com == user ) {
+				System.out.printf("%2d : 정답입니다.\n", com);
+				break;
+			}
+		}
+
+	}
+
+}
