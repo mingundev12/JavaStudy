@@ -4,10 +4,18 @@
 	<section name="java.lang.Class">
 		<item key="replaceBarOpen" value="true"/>
 		<list key="findhistory">
+			<item value="diag"/>
+			<item value="count"/>
+			<item value="line"/>
+			<item value="array"/>
 			<item value="top"/>
 			<item value="bottom"/>
 		</list>
 		<list key="replacehistory">
+			<item value="cross"/>
+			<item value="row"/>
+			<item value="end"/>
+			<item value="bingo"/>
 			<item value="max"/>
 			<item value="min"/>
 		</list>
