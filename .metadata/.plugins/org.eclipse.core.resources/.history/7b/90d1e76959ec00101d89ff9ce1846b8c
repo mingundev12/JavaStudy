@@ -1,0 +1,38 @@
+package study20260108;
+
+public class JavaClasses {
+
+	public static void main(String[] args) {
+		
+		User u = new User();
+		User u2 = new User();
+		User u3 = u;
+		
+		u3.age = 30;
+		u.name = "이순신";
+		u.job = "군인";
+		
+		System.out.println(u.age);
+		System.out.println(u3.age);
+		System.out.println(u3.name);
+		System.out.println(u3.job);
+		
+		
+	}
+
+}
+
+class User {
+	
+	int age;
+	String name;
+	String job;
+	
+}
+
+
+/* 
+ *	자바 클래스
+ *
+ *	데이터 저장 방법 - 변수 , 배열 , 구조체(java 에는 없음) , 클래스
+ */
