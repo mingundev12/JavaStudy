@@ -1,0 +1,55 @@
+package study20260108;
+
+public class JavaClasses {
+
+	public static void main(String[] args) {
+		
+//		User u = new User();
+//		User u2 = new User();
+//		User u3 = u;
+//		
+//		u3.age = 30;
+//		u.name = "이순신";
+//		u.job = "군인";
+//		
+//		System.out.println(u.age);
+//		System.out.println(u3.age);
+//		System.out.println(u3.name);
+//		System.out.println(u3.job);
+		
+//		책 이름, 저자, 출판년도 를 저장할 수 있는 클래스 정의
+//		객체 생성하여 데이터 넣고 출력하기
+		
+		Book book = new Book();
+		
+		book.bookName = "JAVA";
+		book.author = "홍길동";
+		book.year = 2025;
+		
+		System.out.println(book.bookName);
+		System.out.println(book.author);
+		System.out.println(book.year);
+		
+	}
+
+}
+
+class User {
+	
+	int age;
+	String name;
+	String job;
+	
+}
+
+class Book {
+	String bookName, author;
+	int year;
+}
+
+
+/* 
+ *	자바 클래스
+ *
+ *	데이터 저장 방법 - 변수 , 배열 , 구조체(java 에는 없음) , 클래스
+ */
