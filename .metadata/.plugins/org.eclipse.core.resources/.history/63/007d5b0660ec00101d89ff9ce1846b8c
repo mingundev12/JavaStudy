@@ -1,0 +1,16 @@
+package study20260108;
+
+public class JavaClass2 {
+
+	public static void main(String[] args) {
+		
+		Movie movie = new Movie();
+//		new Movie();
+		
+		movie.title = "aaa";
+		movie.dir = "bbb";
+		movie.year = 2026;
+		movie.limitAge = 12;
+	}
+
+}

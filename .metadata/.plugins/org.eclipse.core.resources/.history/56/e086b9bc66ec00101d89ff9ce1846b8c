@@ -1,0 +1,21 @@
+package study20260108;
+
+public class JavaClass2 {
+
+	public static void main(String[] args) {
+		
+		Movie movie = new Movie();
+//		new Movie() 생성자 메서드
+		
+		System.out.println(movie.title);
+		
+		movie.title = "aaa";
+		movie.dir = "bbb";
+		movie.year = 2026;
+		movie.limitAge = 12;
+		
+		
+		System.out.println(movie.title);
+	}
+
+}
