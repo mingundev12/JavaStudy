@@ -4,6 +4,8 @@
 	<section name="java.lang.Class">
 		<item key="replaceBarOpen" value="true"/>
 		<list key="findhistory">
+			<item value="playTime"/>
+			<item value="Date"/>
 			<item value="diag"/>
 			<item value="count"/>
 			<item value="line"/>
@@ -12,6 +14,8 @@
 			<item value="bottom"/>
 		</list>
 		<list key="replacehistory">
+			<item value="duration"/>
+			<item value="Index"/>
 			<item value="cross"/>
 			<item value="row"/>
 			<item value="end"/>
