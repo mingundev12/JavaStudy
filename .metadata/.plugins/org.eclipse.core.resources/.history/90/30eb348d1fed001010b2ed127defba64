@@ -1,0 +1,36 @@
+package study20260109;
+
+public class TestAdv01 {
+
+	public static void main(String[] args) {
+		
+//		문제 1
+		int[] monthlySales = { 1200, 950, 1430, 800, 1600, 1700, 900, 1100, 1550, 1800, 1300, 2000 };
+		int sumSales = 0, avgSales = 0;
+		int maxSales = monthlySales[0];
+		int minSales = monthlySales[0];
+		int count = 0, maxMonth = 0, minMonth = 0;
+		
+		for (int sale : monthlySales) {
+			sumSales += sale;
+			if (sale > maxSales) maxSales = sale;
+			if (sale < minSales) minSales = sale;
+		}
+		
+		avgSales = maxSales / monthlySales.length;
+		
+		for (int i = 0; i < monthlySales.length; i++) {
+			if (monthlySales[i] >= avgSales) count++;
+			if (monthlySales[i] == maxSales) maxMonth = i + 1;
+			if (monthlySales[i] == minSales) minMonth = i + 1;
+		}
+		
+		System.out.println("연간 총 매출 : " + sumSales + "원");
+		System.out.println("월 평균 매출 : " + avgSales + "원");
+		System.out.println("최고 매출 월 : " + maxMonth + ", " + maxSales + "원");
+		System.out.println("최저 매출 월 : " + minMonth + ", " + minSales + "원");
+		System.out.println("평균 이상 매출인 월의 개수 : " + count);
+
+	}
+
+}

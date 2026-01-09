@@ -1,0 +1,11 @@
+package study20260109;
+
+public class Bingo {
+
+	public static void main(String[] args) {
+		BingoBoard user = new BingoBoard();
+		BingoBoard com = new BingoBoard();
+
+	}
+
+}

@@ -1,0 +1,15 @@
+package study20260109;
+
+public class Bingo {
+
+	public static void main(String[] args) {
+		BingoBoard user = new BingoBoard("user");
+		BingoBoard com = new BingoBoard("com");
+
+		while (true) {
+			com.printBoard();
+			user.printBoard();
+		}
+	}
+
+}

@@ -1,0 +1,95 @@
+package study20260109;
+
+import java.util.Scanner;
+
+public class Bingo {
+	
+	public static final int NUM_RANGE = 25;
+	
+	static Scanner sc = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		BingoBoard user = new BingoBoard("user");
+		BingoBoard com = new BingoBoard("com");
+
+		while (true) {
+			com.printBoard();
+			user.printBoard();
+			
+			int num = -1;
+			while (true) {
+				System.out.print(user.owner + "의 차례 :");
+				num = sc.nextInt();
+				if (user.bingo(num)) {
+					com.bingo(num);
+					break;
+				}
+				else System.out.println("숫자를 다시 입력하세요");
+			}
+			
+			user.checkLine();
+			com.checkLine();
+			
+			if (user.lines == 5) {
+				System.out.println(user.owner + "의 승리!");
+				break;
+			}
+			if (com.lines == 5) {
+				System.out.println(com.owner + "의 승리!");
+				break;
+			}
+
+			num = -1;
+			System.out.print(com.owner + "의 차례 :");
+			int index = -1;
+			while (index >= 0) {	
+				int col = 0, row = 0, diag1 = 0, diag2 = 0
+				for (int i = 0; i < 5; i++) {
+					if (com.board[i * 6] == 0) diag1++;
+					if (com.board[i * 4 + 4] == 0) diag2++;
+				}
+				if (diag1 == 4) {
+					for (int i = 0; i < 5; i++) {
+						if (com.board[i * 6] != 0) index = i * 6;
+					}
+					break;
+				}
+				if (diag2 == 4) {
+					for (int i = 0; i < 5; i++) {
+						if (com.board[i * 4 + 4] != 0) index = i * 4 + 4;
+					}
+					break;
+				}
+				
+				for (int i = 0; i < 5; i++) {
+					col = 0;
+					row = 0;
+					for (int j = 0; j < 5; j++) {
+						if (com.board[(i * 5) + j] == 0) col++;
+						if (com.board[(j * 5) + i] == 0) row++;
+					}
+					
+				}
+				if (com.bingo(num)) {
+					System.out.println(num);
+					user.bingo(num);
+					break;
+				}
+			}
+			num = com.board[index];
+			
+			user.checkLine();
+			com.checkLine();
+			
+			if (user.lines == 5) {
+				System.out.println(user.owner + "의 승리!");
+				break;
+			}
+			if (com.lines == 5) {
+				System.out.println(com.owner + "의 승리!");
+				break;
+			}
+		}
+	}
+
+}

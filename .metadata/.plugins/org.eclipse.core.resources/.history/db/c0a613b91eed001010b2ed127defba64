@@ -1,0 +1,15 @@
+package study20260109;
+
+public class TestAdv01 {
+
+	public static void main(String[] args) {
+		
+//		문제 1
+		int[] monthlySales = { 1200, 950, 1430, 800, 1600, 1700, 900, 1100, 1550, 1800, 1300, 2000 };
+		int sumSales = 0, avgSales = 0;
+		int maxSales = monthlySales[0];
+		int minSales = monthlySales[0];
+
+	}
+
+}
