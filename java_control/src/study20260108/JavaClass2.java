@@ -1,5 +1,7 @@
 package study20260108;
 
+import study20260109.Member;
+
 public class JavaClass2 {
 
 	public static void main(String[] args) {
@@ -32,6 +34,12 @@ public class JavaClass2 {
 		System.out.println(music.duration);
 		
 		Music music2 = new Music();
+		
+//		Member 클래스는 public 이지만 다른 패키지에 있으므로 import 를 해야 사용할 수 있다.
+//		Member() 생성자 메서드는 default 이기때문에 다른 패키지인 이곳에서는 사용할 수 없다.
+//		마찬가지로 default 상태인 인스턴스 변수들도 사용이 불가능하다.
+//		public Member() 로 바꾸면 사용가능
+		Member member = new Member();
 	}
 
 }
