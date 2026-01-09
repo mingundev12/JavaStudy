@@ -1,0 +1,10 @@
+package study20260109;
+
+public class Member {
+	
+	String name;
+	int age;
+	String gender;
+	int birthDate;
+
+}
