@@ -3,6 +3,15 @@ package study20260109;
 public class MainMethod {
 
 	public static void main(String[] args) {
+		
+		Member member = new Member();
+		member.name = "김유신";
+		member.age = 24;
+		
+		Member member2 = new Member("이순신", 34, "남");
+		
+//		클래스 외부에서 클래스 변수에 데이터 저장하는 방법
+		Member.dept = "컴퓨터공학과";
 
 	}
 

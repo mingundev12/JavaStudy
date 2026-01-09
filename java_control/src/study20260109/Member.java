@@ -2,12 +2,23 @@ package study20260109;
 
 public class Member {
 	
+//	클래스 변수
+	static String dept; //학과명
+	
 //	인스턴스 변수
 	String name;
 	int age;
 	String gender;
 	int birthDate;
 
+	Member () {} // 생성자 메서드
+	
+//	매개변수가 있는 생성자 메서드
+	Member (String name, int age, String gender) {
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
 }
 
 
