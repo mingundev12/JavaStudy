@@ -1,0 +1,44 @@
+package study20260108;
+
+//import study20260109.Member;
+
+public class JavaClass2 {
+
+	public static void main(String[] args) {
+		
+		Movie movie = new Movie();
+//		new Movie() 생성자 메서드
+		
+		System.out.println(movie.title);
+		
+		movie.title = "aaa";
+		movie.dir = "bbb";
+		movie.year = 2026;
+		movie.limitAge = 12;
+		
+		System.out.println(movie.title);
+		
+		Movie movie2 = new Movie("ddd", 2020);
+		
+		System.out.println(movie2.title);
+		
+//		Music 클래스의 객체 생성하여
+//		음악제목, 가수, 재생시간(총몇분) 저장되게하기
+//		매개변수 있는 생성자 메서드로 데이터 저장하고
+//		출력하기
+		
+		Music music = new Music("노래", "가수", 3);
+		
+		System.out.println(music.title);
+		System.out.println(music.artist);
+		System.out.println(music.duration);
+		
+		Music music2 = new Music();
+		
+//		Member 클래스는 public 이지만 다른 패키지에 있으므로 import 를 해야 사용할 수 있다.
+//		Member() 생성자 메서드는 default 이기때문에 다른 패키지인 이곳에서는 사용할 수 없다.
+//		public Member() 로 바꾸면 사용가능
+//		Member member = new Member();
+	}
+
+}
