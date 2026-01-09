@@ -1,0 +1,19 @@
+package study20260109;
+
+public class Test03 {
+
+	public static void main(String[] args) {
+
+//		문제 3
+		int width = 8;
+		int height = 5;
+		
+		int area;
+		
+		area = width * height;
+		
+		System.out.println(area);
+		
+	}
+
+}

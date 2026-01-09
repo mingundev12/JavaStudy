@@ -1,0 +1,80 @@
+package study20260109;
+
+public class Test {
+
+	public static void main(String[] args) {
+		test01();
+		test02();
+		test03();
+		test04();
+		test05();
+	}
+
+	static void test01() {
+		
+//		문제 1
+		String name = "홍길동";
+		int age = 25;
+		double height = 175.5;
+		String gender = "남";
+		boolean isStudent = true;
+		
+		System.out.println(name);
+		System.out.println(age);
+		System.out.println(height);
+		System.out.println(gender);
+		System.out.println(isStudent);
+		
+	}
+	
+	static void test02() {
+
+//		문제 2
+		int a = 10;
+		int b = 20;
+		
+		int temp;
+		
+		temp = a;
+		a = b;
+		b = temp;
+		
+		System.out.println("a : " + a + ", b : " + b);
+		
+	}
+	
+	static void test03() {
+
+//		문제 3
+		int width = 8;
+		int height = 5;
+		
+		int area;
+		
+		area = width * height;
+		
+		System.out.println("사각형 넓이 : " + area);
+		
+		
+	}
+	
+	static void test04() {
+		
+//		문제 4
+		int kor = 85, eng = 90, mat = 78;
+		int sum, avg;
+		
+		sum = kor + eng + mat;
+		
+		avg = sum / 3;
+		
+		System.out.println("총점 : " + sum + " , 평균 : " + avg);
+		
+	}
+
+	static void test05() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
