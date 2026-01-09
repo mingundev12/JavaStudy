@@ -1,0 +1,13 @@
+package study20260109;
+
+public class MainMethod {
+
+	public static void main(String[] args) {
+		
+		Member member = new Member();
+		
+		Member member2 = new Member("이순신", 34, "남");
+
+	}
+
+}
