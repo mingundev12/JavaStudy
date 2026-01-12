@@ -1,0 +1,20 @@
+package study20260112;
+
+public class Method2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Vending orange = new Vending("쌕쌕 오렌지", 1500, 4);
+		Vending zeroCola = new Vending("제로콜라", 1800, 3);
+		
+		System.out.println(orange);
+		System.out.println(zeroCola);
+		
+		orange.buyProduct(1500);
+		orange.buyProduct(1600);
+		
+		System.out.println(orange);
+		System.out.println(zeroCola);
+	}
+
+}

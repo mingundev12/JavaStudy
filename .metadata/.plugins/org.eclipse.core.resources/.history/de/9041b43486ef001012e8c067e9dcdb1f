@@ -1,0 +1,12 @@
+package study20260112;
+
+public class Vending {
+	// 자판기 클래스
+	
+	private String productName; // 음료수 이름
+	private int price; // 음료수 가격
+	private int stock; // 음료수 수량
+
+//	toString 과, 매개변수 있는 생성자 메서드
+//	각 변수들의 set, get 메서드 만들기
+}

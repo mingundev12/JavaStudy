@@ -1,0 +1,8 @@
+package study20260112;
+
+public class Board {
+	
+	private String title; // 게시판 제목
+	private String writer; // 게시글 작성자
+	private int hit; // 조회수
+}

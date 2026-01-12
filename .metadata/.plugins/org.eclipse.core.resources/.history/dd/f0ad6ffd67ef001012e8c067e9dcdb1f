@@ -1,0 +1,65 @@
+package study20260112;
+
+public class Board {
+	
+	private String title; // 게시판 제목
+	private String writer; // 게시글 작성자
+	private int hit; // 조회수
+	
+	
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+	public int getHit() {
+		return hit;
+	}
+	public void setHit(int hit) {
+		this.hit = hit;
+	}
+	
+	@Override
+	public String toString() {
+		return "Board [title=" + title + ", writer=" + writer + ", hit=" + hit + "]";
+	}
+	
+	public Board(String title, String writer, int hit) {
+		super();
+		this.title = title;
+		this.writer = writer;
+		this.hit = hit;
+	}
+	
+}
+
+
+/* 
+ *	메서드
+ *
+ * 		특정 기능을 실행하게 해주는 것
+ * 		( 기능이라면 출력, 계산, 데이터 필터, 데이터 찾기, 데이터 옮기기, 데이터 삭제 등)
+ * 
+ * 		int[] bingo = new int[25];
+ * 
+ * 		initData(); // 무작위 숫자넣기
+ * 		while (true) {
+ * 			drawBingo();
+ * 			numberInput();
+ * 			if (bingoCheck()) break;
+ *		}
+ *
+ *	메서드의 형태
+ *		제어자 타입 메서드이름
+ *
+ *
+ *	메서드의 형태 4가지
+ *
+ */

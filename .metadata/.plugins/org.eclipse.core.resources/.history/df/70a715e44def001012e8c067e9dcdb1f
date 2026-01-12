@@ -1,0 +1,15 @@
+package study20260112;
+
+public class Student {
+	public String name; // 인스턴스 변수 
+	public String age; // 인스턴스
+	private int tall; // 인스턴스
+	private int grade; // 인스턴스
+	
+	public Student() { }
+	public Student(String name, String age, int tall) {
+		this.name = name;
+		this.age = age;
+		this.tall = tall;
+	}
+}

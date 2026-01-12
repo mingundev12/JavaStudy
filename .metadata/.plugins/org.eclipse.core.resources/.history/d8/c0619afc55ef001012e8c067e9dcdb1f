@@ -1,0 +1,33 @@
+package study20260112;
+
+public class BingoGame {
+
+	// 사용자명, 레벨, 승, 패, 무
+	// 저장할 수 있는 객체가 생성될 수 있게 만들기
+	
+	// 모든 인스턴스 변수는 private 으로
+	// 생성자메서드를 통해 사용자명, 레벨, 승, 패, 무
+	// 입력받을 수 있게 하기
+	// 출력 메서드 만들기
+	
+	private String userName;
+	private int level;
+	private int win;
+	private int lose;
+	private int draw;
+	
+	public BingoGame() { }
+	
+	public BingoGame (String userName, int level, int win, int lose, int draw) {
+		this.userName = userName;
+		this.level = level;
+		this.win = win;
+		this.lose = lose;
+		this.draw = draw;
+	}
+	
+
+	public String toString() {
+		return userName + " (" + level + "Lv), 전적 : " + win + "승 " + lose + "패 " + draw + "무";
+	}
+}
