@@ -2,6 +2,9 @@ package study20260109;
 
 public class BingoBoard {
 	int[] board;
+	int[] col = new int[5],
+			row = new int[5],
+			diag = new int[2];
 	int lines;
 	String owner;
 
@@ -25,37 +28,32 @@ public class BingoBoard {
 	public void checkLine() {
 		lines = 0;
 		
-		int col = 0, row = 0, diag1 = 0, diag2 = 0;
-		
 		for (int i = 0; i < 5; i++) {
-			col = 0;
-			row = 0;
-			for (int j = 0; j < 5; j++) {
-				if (board[(i * 5) + j] == 0) col++;
-				if (board[(j * 5) + i] == 0) row++;
-			}
-			if (board[i * 6] == 0) diag1++;
-			if (board[i * 4 + 4] == 0) diag2++;
-			
-			if (col == 5) lines++;
-			if (row == 5) lines++;
+			if (col[i] == 5) lines++;
+			if (row[i] == 5) lines++;
 		}
 		
-		if (diag1 == 5) lines++;
-		if (diag2 == 5) lines++;
+		if (diag[0] == 5) lines++;
+		if (diag[1] == 5) lines++;
 	}
 	
 	public void printBoard() {
 		System.out.println(owner + "의 빙고판");
-		
-		System.out.println("┌───┬───┬───┬───┬───┐");
+
+		System.out.printf("%3d", diag[0]);
 		for (int i = 0; i < 5; i++) {
+			System.out.printf(" %3d", col[i]);
+		}
+		System.out.printf(" %3d", diag[1]);
+		System.out.println("\n   ┌───┬───┬───┬───┬───┐");
+		for (int i = 0; i < 5; i++) {
+			System.out.printf("%3d", row[i]);
 			for (int j = 0; j < 5; j++) {
 				if (board[(i * 5) + j] != 0) System.out.printf("│%3d", board[(i * 5) + j]);
 				else System.out.printf("│   ");
 			}
-			if (i != 4)	System.out.println("│\n├───┼───┼───┼───┼───┤");
-			else System.out.println("│\n└───┴───┴───┴───┴───┘");
+			if (i != 4)	System.out.println("│\n   ├───┼───┼───┼───┼───┤");
+			else System.out.println("│\n   └───┴───┴───┴───┴───┘");
 		}
 		
 		System.out.println(owner + "의 빙고수 : " + lines);
@@ -65,9 +63,50 @@ public class BingoBoard {
 		for (int i = 0; i < board.length; i++) {
 			if (board[i] == num) {
 				board[i] = 0;
+				col[i % 5]++;
+				row[i / 5]++;
+				if (i % 6 == 0) diag[0]++;
+				if (i % 4 == 0 && i != 0 && i != 24) diag[1]++;
+				checkLine();
 				return true;
 			}
 		}
 		return false;
+	}
+	
+	public int bingoCom() {
+		int count = 4;
+		
+		while (true) {
+			if (diag[0] == count) {
+				for (int i = 0; i < 5; i++) {
+					if (board[i * 6] != 0) return board[i * 6];
+				}
+			}
+			
+			if (diag[1] == count) {
+				for (int i = 0; i < 5; i++) {
+					if (board[i * 4 + 4] != 0) return board[i * 4 + 4];
+				}
+			}
+			
+			for (int i = 0; i < 5; i++) {
+				if (col[i] == count) {
+					for (int j = 0; j < 5; j++) {
+						if (board[i * 5 + j] != 0) return board[i * 5 + j];
+					}
+				}
+				if (row[i] == count) {
+					for (int j = 0; j < 5; j++) {
+						if (board[j * 5 + i] != 0) return board[j * 5 + i];
+					}
+				}
+			}
+			
+			count--;
+			if(count == 0) break;
+		}
+		
+		return board[board.length/2];
 	}
 }

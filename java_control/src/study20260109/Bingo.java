@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Bingo {
 	
-	public static final int NUM_RANGE = 25;
+	public static final int NUM_RANGE = 100;
 	
 	static Scanner sc = new Scanner(System.in);
 
@@ -27,85 +27,35 @@ public class Bingo {
 				else System.out.println("숫자를 다시 입력하세요");
 			}
 			
-			user.checkLine();
-			com.checkLine();
-			com.printBoard();
-			user.printBoard();
-			
 			if (user.lines == 5) {
 				System.out.println(user.owner + "의 승리!");
+				com.printBoard();
+				user.printBoard();
 				break;
 			}
 			if (com.lines == 5) {
 				System.out.println(com.owner + "의 승리!");
+				com.printBoard();
+				user.printBoard();
 				break;
 			}
 
-			num = -1;
 			System.out.print(com.owner + "의 차례 :");
-			int index = -1;
-			int count = 4;
-			while (index < 0) {
-				int col = 0, row = 0, diag1 = 0, diag2 = 0;
-				for (int i = 0; i < 5; i++) {
-					if (com.board[i * 6] == 0) diag1++;
-					if (com.board[i * 4 + 4] == 0) diag2++;
-				}
-				if (diag1 == count) {
-					for (int i = 0; i < 5; i++) {
-						if (com.board[i * 6] != 0) index = i * 6;
-					}
-					break;
-				}
-				if (diag2 == count) {
-					for (int i = 0; i < 5; i++) {
-						if (com.board[i * 4 + 4] != 0) index = i * 4 + 4;
-					}
-					break;
-				}
-				
-				for (int i = 0; i < 5; i++) {
-					col = 0;
-					row = 0;
-					for (int j = 0; j < 5; j++) {
-						if (com.board[(i * 5) + j] == 0) col++;
-						if (com.board[(j * 5) + i] == 0) row++;
-					}
-					if(col == count) {
-						for (int j = 0; j < 5; j++) {
-							if (com.board[(i * 5) + j] != 0)
-								index = (i * 5) + j;
-						}
-						break;
-					}
-					if(row == count) {
-						for (int j = 0; j < 5; j++) {
-							if (com.board[(j * 5) + i] != 0)
-								index = (j * 5) + i;
-						}
-						break;
-					}
-					
-				}
-				count --;
-				
-			}
-			num = com.board[index];
-			com.bingo(num);
+			
+			num = com.bingoCom();
 			System.out.println(num);
+			com.bingo(num);
 			user.bingo(num);
 			
-			user.checkLine();
-			com.checkLine();
 			com.printBoard();
 			user.printBoard();
 			
-			if (user.lines == 5) {
-				System.out.println(user.owner + "의 승리!");
-				break;
-			}
 			if (com.lines == 5) {
 				System.out.println(com.owner + "의 승리!");
+				break;
+			}
+			if (user.lines == 5) {
+				System.out.println(user.owner + "의 승리!");
 				break;
 			}
 		}
