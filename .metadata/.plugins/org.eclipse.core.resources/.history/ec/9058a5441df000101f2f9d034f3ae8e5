@@ -1,8 +1,0 @@
-package study20260113;
-
-public class UserService {
-
-}
-
-//	데이터 저장 관리하기 위한 클래스에서
-//	데이터 필터링이나, 파일저장(DB), 불러오기 등등을 수행하지 않는다.

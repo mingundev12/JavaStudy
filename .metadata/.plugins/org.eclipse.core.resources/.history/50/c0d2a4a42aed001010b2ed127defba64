@@ -1,7 +1,0 @@
-package study20260109;
-
-public class BingoBoard {
-	private int[][] board;
-	int lines;
-
-}
