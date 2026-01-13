@@ -33,3 +33,18 @@ project를 github에 업로드
     *.java 우클릭 - team - commit을 하면 업로드 할 파일을 선택할 수 있다.
       파일을 선택한 후, Commit Message란에 내용(주로 수정사항에 대한 메모)을 반드시 작성하여야만 Commit and push로
       repository에 업로드할 수 있다.
+
+
+## DB 연결
+
+mySQL 다운로드
+
+      google 에서 mysql 검색
+      mysql - community - 8.0.39.0.msi 다운로드 및 설치
+      mysql connector / j  - 8.4.0.zip 다운로드, 압축해제
+
+project와 DB를 연결하기
+
+      project - properties 선택
+      JAVA Build Path - Libraries - Classpath 선택
+      Add External JARs - connector.jar 선택하고 Apply and Close
