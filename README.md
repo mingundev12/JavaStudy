@@ -42,6 +42,8 @@ mySQL 다운로드
       google 에서 mysql 검색
       mysql - community - 8.0.39.0.msi 다운로드 및 설치
       mysql connector / j  - 8.4.0.zip 다운로드, 압축해제
+      port 3306 : port는 기본값
+      root / 123456 : pass는 임의저장
 
 project와 DB를 연결하기
 
