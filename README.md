@@ -92,7 +92,7 @@ DB 만들기
          data 수정
             - update
             
-DBeaver 와 같은 tool을 이용하여 직접 sql 명령어를 작성하는 것보다 간편하게 DB를 관리할 수 있다.
+DBeaver 와 같은 tool을 이용하여 직접 query 명령문을 작성하는 것보다 간편하게 DB를 관리할 수 있다.
 
       https://dbeaver.io/download/
       새 데이터베이스 연결 - mySQL - DB명, 사용자명, 비밀번호 입력 - test connect 해서 연결확인하고 확인누르기
