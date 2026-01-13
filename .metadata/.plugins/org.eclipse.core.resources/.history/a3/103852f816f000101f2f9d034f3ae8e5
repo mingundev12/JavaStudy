@@ -1,0 +1,14 @@
+package study20260113;
+
+public class Method3 {
+
+	public static void main(String[] args) {
+		
+//		User[] users = new User[5];
+//		users[0].setName("이순신");
+//		
+//		System.out.println(users[0].getName());
+
+	}
+
+}

@@ -1,0 +1,31 @@
+package study20260113;
+
+import java.util.Scanner;
+
+public class UserService {
+	
+//	아이디 찾기 메서드
+//	이름을 입력하면 아이디 찾기 할것이다.
+	public String findId(User[] users) {
+		String id = new String(), name;
+		Scanner sc = new Scanner(System.in);	
+		name = sc.nextLine();
+		
+		for(User user : users) {
+			if(user.getName().equals(name)) {
+				id = user.getId();
+				break;
+			}
+		}
+		
+		return id;
+	}
+
+}
+
+//	데이터 저장 관리하기 위한 클래스에서
+//	데이터 필터링이나, 파일저장(DB), 불러오기 등등을 수행하지 않는다.
+
+//	데이터 저장 관리하기 위한 클래스에서는
+//	저장에 관해 메서드를 주로 만들고
+//	데이터 변환에 대해서만 만든다.
