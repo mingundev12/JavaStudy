@@ -1,7 +1,6 @@
 package study20260112;
 
 public class Product {
-<<<<<<< HEAD
 
 	private String name;
 	private int price;
