@@ -1,0 +1,11 @@
+package study20260113;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class DBConnect {
+	private Connection conn;
+	private Statement st;
+	private ResultSet rs;
+}

@@ -73,8 +73,8 @@ public class Vending {
 //		음료수의 수량이 부족하여 자판기 관리자가 채우려고 한다.
 //		해당 음료수의 수량을 채우기 위해 얼만큼 넣었는지
 //		그리고 해당 음료수의 수량을 증가시켜주세요.
-	public void add(int amount) {
-		stock += amount;
+	public void add(int addStock) {
+		stock += addStock;
 	}
 	
 	

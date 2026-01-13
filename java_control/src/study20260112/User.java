@@ -1,7 +1,10 @@
 package study20260112;
 
 public class User {
+<<<<<<< HEAD
 	
+=======
+>>>>>>> branch 'main' of https://github.com/mingundev12/JavaStudy
 	private String name;
 	private String id;
 	private String password;
