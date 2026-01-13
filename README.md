@@ -48,3 +48,9 @@ project와 DB를 연결하기
       project - properties 선택
       JAVA Build Path - Libraries - Classpath 선택
       Add External JARs - connector.jar 선택하고 Apply and Close
+
+DB 만들기
+
+      DB계정 ┬ 생성
+             └ DB
+                └ table
