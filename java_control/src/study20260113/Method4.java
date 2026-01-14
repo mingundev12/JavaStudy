@@ -2,7 +2,13 @@ package study20260113;
 
 public class Method4 {
 	public static void main(String[] args) {
+		
 		DBConnect connect = new DBConnect();
+		
 		Product[] products = connect.selectData();
+		
+		for (Product product : products) {
+			System.out.println(product);
+		}
 	}
 }

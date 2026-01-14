@@ -3,7 +3,6 @@ package study20260113;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DBConnect {
@@ -41,23 +40,37 @@ public class DBConnect {
 		
 		Product[] products = new Product[6];
 //		쿼리문 작성하기
-		String sql = "select * from product";
+		String sql = "select * from product"; // product 테이블의 모든 데이터 조회
 		
-//		쿼리문 보내기
 		try {
-			st = conn.createStatement();
+//		쿼리문 보내기
+			st = conn.createStatement(); // Statement 생성
+//		결과 받기
+			rs = st.executeQuery(sql); // Query 문 보내고 받은 결과를 ResultSet 에 저장
+			System.out.println("데이터 조회 완료");
 		} catch (Exception e) {
 			System.out.println("쿼리문 실패");
 			e.printStackTrace();
 		}
 		
-//		결과 받기
-		
 //		데이터들을 product 객체에 저장하기
-		for(Product product : products) {
-			
+		try {
+			int i = 0;
+			while (rs.next()) {
+				Product temp = new Product(
+						rs.getString("item_name"),
+						rs.getInt("price"),
+						rs.getInt("stock"),
+						rs.getString("description")
+						);
+				products[i] = temp;
+				i++;
+			}
+			System.out.println("객체생성 완료");
+		} catch (Exception e) {
+			System.out.println("객체생성 실패");
+			e.printStackTrace();
 		}
-		
 		
 		return products;
 	}
