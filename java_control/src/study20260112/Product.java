@@ -1,6 +1,7 @@
 package study20260112;
 
 public class Product {
+
 	private String name;
 	private int price;
 	private String category;
@@ -60,4 +61,5 @@ public class Product {
 	public String toString() {
 		return "Product [name=" + name + ", price=" + price + ", category=" + category + ", amount=" + amount + "]";
 	}
+	
 }
