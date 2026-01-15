@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class DBConnect {
 	private Connection conn; // DB 연결 유지
@@ -36,9 +37,9 @@ public class DBConnect {
 	}
 	
 //	product 테이블의 데이터 가져오기
-	public Product[] selectData() {
+	public ArrayList<Product> selectData() {
 		
-		Product[] products = new Product[6];
+		ArrayList<Product> products = new ArrayList<>();
 //		쿼리문 작성하기
 		String sql = "select * from product"; // product 테이블의 모든 데이터 조회
 		
@@ -55,7 +56,6 @@ public class DBConnect {
 		
 //		데이터들을 product 객체에 저장하기
 		try {
-			int i = 0;
 			while (rs.next()) {
 				Product temp = new Product(
 						rs.getString("item_name"),
@@ -63,8 +63,7 @@ public class DBConnect {
 						rs.getInt("stock"),
 						rs.getString("description")
 						);
-				products[i] = temp;
-				i++;
+				products.add(temp);
 			}
 			System.out.println("객체생성 완료");
 		} catch (Exception e) {

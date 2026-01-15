@@ -5,9 +5,9 @@ public class Method4 {
 		
 		DBConnect connect = new DBConnect();
 		
-		Product[] products = connect.selectData();
+		ProductService ps = new ProductService(connect.selectData());
 		
-		for (Product product : products) {
+		for (Product product : ps.getProducts()) {
 			System.out.println(product);
 		}
 	}
