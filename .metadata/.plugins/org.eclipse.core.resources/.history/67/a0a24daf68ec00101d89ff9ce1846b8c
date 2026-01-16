@@ -1,7 +1,0 @@
-package study20260108;
-
-public class Music {
-	String title;
-	String artist;
-	int playTime;
-}
