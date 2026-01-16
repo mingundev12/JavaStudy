@@ -1,27 +1,19 @@
 package dto;
 
-import able.CafeOrder;
+public class CoffeeOrder extends BaseOrder {
 
-public class CoffeeOrder implements CafeOrder{
-
-	@Override
-	public void takeOrder() {
-		// TODO Auto-generated method stub
-		
+	public CoffeeOrder(String cafeName, String menuName) {
+		super(cafeName, menuName);
 	}
 
 	@Override
 	public void make() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("[" + cafeName + "] 원두 갈기 -> 추출 중...");
 	}
 
 	@Override
 	public void serve() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("[" + cafeName + "] " + menuName + " 제공 완료");
 	}
-	
-	
 
 }
