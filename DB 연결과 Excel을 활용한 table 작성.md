@@ -69,3 +69,51 @@ DBeaver 와 같은 tool을 이용하여 직접 query 명령문을 작성하는 �
       다른 이름으로 저장 - *.csv 확장자(쉼표로 구분된 값 이라는 뜻)를 선택하여 저장
       (데이터에 한글이 있는 경우) - notepad로 해당파일을 열기 - 다른 이름으로 저장 - 인코딩을 UTF-8로 변경하여 저장
       
+
+
+## DB와 연결하는 코드의 예시
+    
+      import java.sql.*;
+
+      public class DBConnect {
+      	private Connection conn;
+      	private Statement st;
+      	private ResultSet rs;
+      
+      	public DBConnect() {
+      		connect();
+      	}
+      	
+      	public void connect() {
+      		try {
+      			Class.forName("com.mysql.cj.jdbc.Driver");
+      			String username = "mingundev";
+      			String password = "1234";
+      			String url = "jdbc:mysql://localhost:3306/mingundev";
+      			
+      			conn = DriverManager.getConnection(url, username, password);
+      		} catch (Exception e) {
+      			System.out.println(e.getMessage());
+      		}
+      	}
+      	
+      	public ArrayList<Item> selectItem() {
+      		ArrayList<Item> items = new ArrayList<>();
+      		
+      		String sql = "select * from item";
+      		try {
+      			st = conn.createStatement();
+      			rs = st.executeQuery(sql);
+      			while(rs.next()) {
+      				items.add(new Item(
+      						rs.getString("item_name"), rs.getInt("item_price"),
+      						rs.getString("item_main_image"), rs.getInt("item_stock")
+      						));
+      			}
+      		} catch (Exception e) {
+      			System.out.println(e.getMessage());
+      		}
+      		
+      		return items;
+      	}
+      }
