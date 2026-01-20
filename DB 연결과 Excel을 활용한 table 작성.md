@@ -30,9 +30,12 @@ DB 만들기
          DB 생성
             - create database DB명;
             - DB명 : 일반적으로 계정이름과 똑같이 설정한다.
+            - "절대로" DB안의 내용은 root 계정으로 사용하지 않는다.
          권한설정
             - grant all privileges on DB명.* to '계정명';
             - DB.* : DB 내에 있는 모든 table 이라는 뜻
+         권한 적용
+            - flush privileges;
          table 생성 
             - 사용하고자 하는 DB를 지정
             - use DB명;    ->   Database changed
