@@ -34,6 +34,8 @@ DB 만들기
          권한설정
             - grant all privileges on DB명.* to '계정명';
             - DB.* : DB 내에 있는 모든 table 이라는 뜻
+         권한 적용
+            - flush privileges;
          table 생성 
             - 사용하고자 하는 DB를 지정
             - use DB명;    ->   Database changed
