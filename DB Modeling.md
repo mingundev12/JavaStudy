@@ -42,6 +42,7 @@ unique
     select * from tableName
     select columnName, columnName from tableName
     select * from tableName order by columnName asc/desc;  -> 특정 column 기준으로 오름차순, 내림차순 정렬
+    update tableName set columnName = value where columnName = value; 
     
     select : 조회, 검색
     insert : 삽입, 추가, 등록
@@ -101,4 +102,4 @@ SQL 명령어 분류
   6. enum ("남자", "여자")
   7. check (price >= 0)
 
-** 회원관리 : <목록>, 상세보기, <등록>, 수정, 삭제
+** 회원관리 : <목록>, 상세보기, <등록>, <수정>, <삭제>
