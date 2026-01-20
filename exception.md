@@ -10,7 +10,7 @@
 			System.out.println("c : " + c);
 		} catch (Exception e) {
 			e.printStackTrace();
-//			printStackTrace() 메서드는 개발할 때는 사용하고, 실제 서비스할 때에는 주석처리한다.
+	//			printStackTrace() 메서드는 개발할 때는 사용하고, 실제 서비스할 때에는 주석처리한다.
 
 			System.out.println(b + "으로 나누어서 종료");
 		} finally {
