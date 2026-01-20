@@ -51,6 +51,8 @@ unique
     delete from tableName; = 테이블에 있는 모든 데이터를 삭제
     delete from tableName where (조건);
 
+SQL 명령어 분류
+
     DDL :   데이터 정의어 - create, alter, drop, truncate
     DML :   데이터 조작어 - select, insert, update, delete => record
     DCL :   데이터 제어어 - grant(권한 부여), revoke(권한 회수), 
@@ -99,3 +101,4 @@ unique
   6. enum ("남자", "여자")
   7. check (price >= 0)
 
+** 회원관리 : <목록>, 상세보기, <등록>, 수정, 삭제
