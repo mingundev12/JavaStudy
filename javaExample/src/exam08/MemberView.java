@@ -1,21 +1,19 @@
 package exam08;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Scanner;
 
-//회원삭제프로그램
-public class MemberDelete {
+public class MemberView {
 
 	public static void main(String[] args) {
 		
-
-
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("삭제할 아이디 : ");
+		System.out.print("상세보기할 아이디 : ");
 		String id = sc.nextLine();
 		
 		sc.close();
@@ -34,18 +32,24 @@ public class MemberDelete {
 			conn = DriverManager.getConnection(dbUrl, dbUsr, dbPwd);
 			
 			// ------------------------------------------------
-			String sql = "";
-			sql += "delete from member where id = ?";
+			String sql =  "select * from member where id = ?";
 			
 			pstmt = conn.prepareStatement(sql);
-//			DB에서의 index 는 1부터 시작한다.
 			pstmt.setString(1, id);
 			
-			int result = pstmt.executeUpdate(); // 0 or 1
-			if (result > 0) {
-				System.out.println("삭제성공." + result);
+			rs = pstmt.executeQuery();
+	
+			if (rs.next()) {
+				int no = rs.getInt("no");
+				String password = rs.getString("password");
+				String name = rs.getString("name");
+				String phone = rs.getString("phone");
+				Date createdDate = rs.getDate("createdDate");
+				
+				System.out.printf("%s\t%s \t %s \t %s \t %s \n", no, id, name, phone, createdDate);
+				
 			} else {
-				System.out.println("삭제실패." + result);
+				System.out.println("등록된 회원이 없습니다.");
 			}
 			// ------------------------------------------------
 			
@@ -62,6 +66,7 @@ public class MemberDelete {
 		}
 	
 		System.out.println("--- 프로그램 종료 ---");
+
 	}
 
 }

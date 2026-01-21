@@ -48,13 +48,13 @@ public class MemberUpdate {
 			pstmt.setString(3, id);
 			
 			int result = pstmt.executeUpdate(); // 0 or 1
-			// ------------------------------------------------
 			if (result > 0) {
 				System.out.println("수정성공.");
 			} else {
 				System.out.println("수정실패.");
 			}
 			
+			// ------------------------------------------------
 		} catch (Exception e) {
 			System.out.println("드라이버 로딩 실패 또는 접속 실패");
 		} finally {
