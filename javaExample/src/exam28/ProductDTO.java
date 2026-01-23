@@ -1,42 +1,59 @@
 package exam28;
 
-public class Product {
-	String name;
-	int cost;
-	int count;
-	
-	public Product() {}
-	
-	public Product(String name, int cost, int count) {
-		this.name = name;
-		this.cost = cost;
-		this.count = count;
+public class ProductDTO {
+	private String productName;
+	private int productPrice;
+	private int buyCounter;
+	private int total;
+
+	public ProductDTO() {
 	}
 
-	public String getName() {
-		return name;
+	public ProductDTO(String productName, int productPrice, int count) {
+		this.productName = productName;
+		this.productPrice = productPrice;
+		this.buyCounter = count;
+		this.total = productPrice * count;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public String getProductName() {
+		return productName;
 	}
 
-	public int getCost() {
-		return cost;
+	public void setProductName(String name) {
+		this.productName = name;
 	}
 
-	public void setCost(int cost) {
-		this.cost = cost;
+	public int getProductPrice() {
+		return productPrice;
 	}
 
-	public int getCount() {
-		return count;
+	public void setProductPrice(int productPrice) {
+		this.productPrice = productPrice;
 	}
 
-	public void setCount(int count) {
-		this.count = count;
+	public int getBuyCounter() {
+		return buyCounter;
 	}
-	
-	
 
+	public void setBuyCounter(int count) {
+		this.buyCounter = count;
+	}
+
+	public int getTotal() {
+		return total;
+	}
+
+	public void setTotal() {
+		total = productPrice * buyCounter;
+	}
+
+	@Override
+	public String toString() {
+		return productName + "\t" + productPrice + "\t" + buyCounter + "\t" + total;
+	}
+
+	public void display() {
+		System.out.println(this);
+	}
 }
