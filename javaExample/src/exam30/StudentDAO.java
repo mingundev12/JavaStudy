@@ -12,6 +12,7 @@ public class StudentDAO {
   	
   	public StudentDAO() throws Exception {
   		connect();
+		System.out.println("- DB 접속 완료 -");
 	}
 
 	private void connect() throws Exception {
@@ -21,6 +22,46 @@ public class StudentDAO {
 		
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		conn = DriverManager.getConnection(dbUrl, dbUsr, dbPwd);
+	}
+	
+	public void execute(String command, String sql) throws Exception {
+		pstmt = conn.prepareStatement(command + sql);
+		
+		if (!command.toLowerCase().equals("select")) {
+			int result = pstmt.executeUpdate();
+			
+			if (result > 0) {
+				System.out.println("처리 성공");
+			} else {
+				System.out.println("처리 실패");
+			}
+		} else {
+			rs = pstmt.executeQuery();
+		}
+	}
+
+	public List<StudentDTO> getList() throws Exception {
+		List<StudentDTO> list = new ArrayList<>();
+		
+		while (rs.next()) {
+			list.add(new StudentDTO(
+					rs.getInt("id_number"),
+					rs.getString("name"),
+					rs.getString("ssn"),
+					rs.getString("phone"),
+					rs.getString("address"),
+					rs.getDate("created_date")
+					));
+		}
+		
+		return list;
+	}
+
+	public void dbClose() throws Exception {
+		if(conn != null) { conn.close(); }
+		if(pstmt != null) { pstmt.close(); }
+		if(rs != null) { rs.close(); }
+		System.out.println("- DB 접속 종료 -");
 	}
 	
 //	public void setInsert(StudentDTO student) throws Exception {
@@ -42,37 +83,4 @@ public class StudentDAO {
 //			System.out.println("등록 실패");
 //		}
 //	}
-	
-	public void executeQuery(String command, String sql) throws Exception {
-		pstmt = conn.prepareStatement(command + sql);
-		
-		if (!command.toLowerCase().equals("select")) {
-			int result = pstmt.executeUpdate();
-			
-			if (result > 0) {
-				System.out.println("처리 성공");
-			} else {
-				System.out.println("처리 실패");
-			}
-		} else {
-			rs = pstmt.executeQuery();
-		}
-	}
-
-	public List<StudentDTO> getStudentList() throws Exception {
-		List<StudentDTO> list = new ArrayList<>();
-		
-		while (rs.next()) {
-			list.add(new StudentDTO(
-					rs.getInt("id_number"),
-					rs.getString("name"),
-					rs.getString("ssn"),
-					rs.getString("phone"),
-					rs.getString("address"),
-					rs.getDate("created_date")
-					));
-		}
-		
-		return list;
-	}
 }

@@ -4,6 +4,7 @@
 	<section name="java.lang.Class">
 		<item key="replaceBarOpen" value="true"/>
 		<list key="findhistory">
+			<item value="cost"/>
 			<item value="price"/>
 			<item value="playTime"/>
 			<item value="Date"/>
@@ -15,6 +16,7 @@
 			<item value="bottom"/>
 		</list>
 		<list key="replacehistory">
+			<item value="price"/>
 			<item value="itemPrice"/>
 			<item value="duration"/>
 			<item value="Index"/>
