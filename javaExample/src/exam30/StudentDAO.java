@@ -5,22 +5,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StudentDAO {
+	
+	private String dbDrv;
+	private String dbUrl;
+	private String dbUsr;
+	private String dbPwd;
 
 	private Connection conn;
   	private PreparedStatement pstmt;
   	private ResultSet rs;
   	
   	public StudentDAO() throws Exception {
+  		DBConStr conStr = new DBConStr();
+  		dbDrv = conStr.getDbDrv();
+  		dbUrl = conStr.getDbUrl();
+  		dbUsr = conStr.getDbUsr();
+  		dbPwd = conStr.getDbPwd();
+  		
   		connect();
 		System.out.println("- DB 접속 완료 -");
 	}
 
 	private void connect() throws Exception {
-		String dbUrl = "jdbc:mysql://localhost:3306/javaExample?serverTimezone=Asia/Seoul";
-		String dbUsr = "javaUser";
-		String dbPwd = "1234";
-		
-		Class.forName("com.mysql.cj.jdbc.Driver");
+		Class.forName(dbDrv);
 		conn = DriverManager.getConnection(dbUrl, dbUsr, dbPwd);
 	}
 	
