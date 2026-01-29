@@ -30,12 +30,14 @@ public class MainMethod {
 					break;
 				case "2":
 					System.out.println("-도서 관리 파트-");
+					BookDAO.bookMain(conn, sc);
 					break;
 				case "3":
 					System.out.println("-회원 관리 파트-");
+					Management.memberMain(conn, sc);
 					break;
 				case "4":
-					System.out.println("-조회 통계 파트-");
+					Search.checkLoanAndOverdueStatus(conn);
 					break;
 				case "5":
 					if(member == null) {

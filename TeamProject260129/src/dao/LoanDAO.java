@@ -71,8 +71,8 @@ public class LoanDAO {
 			bookId = rs.getInt("id");
 		}
 
-//			도서 대출 현황 체크
-		Boolean isTrue = true && ableToLoanMore();
+//		도서 대출 현황 체크
+		Boolean isTrue = (CheckStatus.getLoanStatusByTitle(conn, title) > 0) && ableToLoanMore();
 
 		if (isTrue) {
 
@@ -109,7 +109,7 @@ public class LoanDAO {
 		}
 
 //			도서 대출 현황 체크
-		Boolean isTrue = true;
+		Boolean isTrue = CheckStatus.getLoanStatusByTitle(conn, title) > 0;
 
 		if (isTrue) {
 
