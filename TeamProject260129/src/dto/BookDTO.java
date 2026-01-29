@@ -1,4 +1,4 @@
-package books;
+package dto;
 
 public class BookDTO {
 

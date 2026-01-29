@@ -1,4 +1,4 @@
-package loans;
+package dto;
 
 import java.sql.Date;
 
