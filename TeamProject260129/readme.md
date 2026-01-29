@@ -3,3 +3,8 @@
 * 링크
 
 https://drive.google.com/drive/folders/1eeZ5RlqigzIJBMjH2t2VjbnTUJ6jOTxO?usp=sharing
+
+
+* 참여자
+
+      김민수 : @mingundev12
