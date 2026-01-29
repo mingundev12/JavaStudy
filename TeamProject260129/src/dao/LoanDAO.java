@@ -18,6 +18,7 @@ public class LoanDAO {
 	private ResultSet rs;
 	private Scanner sc;
 	private MemberDTO member;
+	private final int LOAN_BOOK_CAP = 3;
 
 	public LoanDAO(Connection conn, Scanner sc, MemberDTO member) {
 		this.sc = sc;
@@ -186,8 +187,10 @@ public class LoanDAO {
 			LoanDTO loan = (LoanDTO) map.get("loan");
 			count += loan.getIsLoan();
 		}
+		
+		System.out.println(member.getName() + " 님은 " + (LOAN_BOOK_CAP - count) + "권 추가 대출 가능합니다.");
 
-		return count < 3;
+		return count < LOAN_BOOK_CAP;
 	}
 
 }

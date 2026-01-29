@@ -73,7 +73,7 @@ public class MemberDTO {
 	@Override
 	public String toString() {
 		return "MemberDTO [id=" + id + ", name=" + name + ", birth=" + birth + ", phone=" + phone + ", email=" + email
-				+ ", password=" + password + "]";
+				+ "]";
 	}
 
 }
