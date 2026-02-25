@@ -20,7 +20,6 @@ public class Management {
 				} else if (menu.equals("4")) {
 					MemberView.view(conn, sc);
 				}
-				sc.nextLine();		
 			}
 			System.out.println("--- 회원관리 종료 ---");
 					
